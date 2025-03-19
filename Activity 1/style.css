@@ -1,0 +1,128 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    width: 450px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+h2 {
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: #348cac;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    outline: none;
+    background: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.input-container input:focus {
+    border-color: #348cac;
+    box-shadow: 0 0 0 3px rgba(52, 140, 172, 0.15);
+}
+
+.input-container label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #888;
+    transition: 0.3s ease;
+    pointer-events: none;
+    background: white;
+    padding: 0 8px;
+}
+
+.input-container input:focus ~ label,
+.input-container input:not(:placeholder-shown) ~ label {
+    top: 0;
+    font-size: 14px;
+    color: #348cac;
+    font-weight: 500;
+}
+
+button {
+    background: linear-gradient(135deg, #348cac 0%, #025e8c 100%);
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(52, 140, 172, 0.2);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #025e8c 0%, #014963 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(52, 140, 172, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(52, 140, 172, 0.2);
+}
+
+/* Add a subtle animation for input focus */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(52, 140, 172, 0.4); }
+    70% { box-shadow: 0 0 0 5px rgba(52, 140, 172, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(52, 140, 172, 0); }
+}
+
+.input-container input:focus {
+    animation: pulse 1.5s infinite;
+}
